@@ -1,10 +1,7 @@
 export default function App() {
   return (
     <div className="prose">
-      <h1>
-        Hello world!
-      </h1>
-      <h3>testing</h3>
+      <h1>Berhasil Push Ke Github</h1>
     </div>
   )
 }
