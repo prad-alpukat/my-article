@@ -1,7 +1,10 @@
 import React from 'react'
+import AdminLayout from '../layouts/AdminLayout'
 
 export default function Admin() {
     return (
-        <div>Admin</div>
+        <AdminLayout>
+            <div>Admin</div>
+        </AdminLayout>
     )
 }

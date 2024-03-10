@@ -1,7 +1,10 @@
 import React from 'react'
+import AdminLayout from '../layouts/AdminLayout'
 
 export default function CreatePost() {
     return (
-        <div>CreatePost</div>
+        <AdminLayout>
+            <div>CreatePost</div>
+        </AdminLayout>
     )
 }

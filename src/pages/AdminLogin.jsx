@@ -1,7 +1,10 @@
 import React from 'react'
+import AdminLayout from '../layouts/AdminLayout'
 
 export default function AdminLogin() {
     return (
-        <div>AdminLogin</div>
+        <AdminLayout>
+            <div>AdminLogin</div>
+        </AdminLayout>
     )
 }
