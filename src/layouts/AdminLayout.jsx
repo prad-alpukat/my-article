@@ -1,6 +1,6 @@
 import React from 'react'
-import NavbarAdmin from '../components/NavbarAdmin'
-import Footer from '../components/Footer'
+import NavbarAdmin from '../components/section/NavbarAdmin'
+import Footer from '../components/section/Footer'
 
 export default function AdminLayout({ children }) {
     return (
