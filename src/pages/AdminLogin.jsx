@@ -1,10 +1,11 @@
 import React from 'react'
 import AdminLayout from '../layouts/AdminLayout'
+import SectionLogin from '../components/section/SectionLogin'
 
 export default function AdminLogin() {
     return (
         <AdminLayout>
-            <div>AdminLogin</div>
+            <SectionLogin />
         </AdminLayout>
     )
 }
