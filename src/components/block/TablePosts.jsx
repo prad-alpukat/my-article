@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function TablePosts() {
     return (
@@ -27,7 +28,7 @@ export default function TablePosts() {
                         </td>
                         <td>
                             <div className='flex gap-3'>
-                                <button className='btn btn-sm btn-success'>Edit</button>
+                                <NavLink to="/admin/edit-post/12" className='btn btn-sm btn-success'>Edit</NavLink>
                                 <button className='btn btn-sm btn-error btn-outline'>Delete</button>
                             </div>
                         </td>

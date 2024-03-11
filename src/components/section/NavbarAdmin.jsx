@@ -8,6 +8,7 @@ export default function NavbarAdmin() {
                     <a className="text-xl btn btn-ghost">My Article - Admin</a>
                 </div>
                 <div className="flex-none space-x-4">
+
                     {/* input search */}
                     <div className="join">
                         <input className="w-full input input-sm sm:w-36 input-bordered join-item" placeholder="pencarian..." />
