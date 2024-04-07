@@ -1,31 +1,22 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import CardPost from '../block/CardPost'
 import Pagination from '../block/Pagination'
+import { getPosts } from '../../utils'
 
 export default function SectionCatalog() {
+    const [posts, setPosts] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [totalPage, setTotalPage] = useState(1)
 
-    const posts = [
-        {
-            id: 1,
-            title: "Posts 1",
-            description: "Description 1"
-        },
-        {
-            id: 2,
-            title: "Posts 2",
-            description: "Description 2"
-        },
-        {
-            id: 3,
-            title: "Posts 3",
-            description: "Description 3"
-        },
-        {
-            id: 4,
-            title: "Posts 4",
-            description: "Description 4"
-        },
-    ]
+    async function fetchData() {
+        const data = await getPosts(currentPage)
+        setPosts(data.posts)
+        setTotalPage(data.total_page)
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [currentPage])
 
     return (
         <section className='container py-10'>
@@ -38,14 +29,19 @@ export default function SectionCatalog() {
                     posts.map(post =>
                         <CardPost
                             key={post.id}
-                            title={post.title}
-                            description={post.description}
+                            title={post.title.rendered}
+                            description={post.excerpt.rendered}
                         />)
                 }
             </div>
 
             {/* pagination */}
-            <Pagination />
+            <Pagination
+                onPrev={() => setCurrentPage(currentPage - 1)}
+                onNext={() => setCurrentPage(currentPage + 1)}
+                totalPage={totalPage}
+                currentPage={currentPage}
+            />
         </section>
     )
 }
